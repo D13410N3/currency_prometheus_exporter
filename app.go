@@ -44,7 +44,7 @@ var (
 
 func main() {
     addr := getEnv("LISTEN_ADDR", "0.0.0.0:9393")
-    configPath := os.Getenv("CONFIG_FILE")
+    configPath := getEnv("CONFIG_FILE", "./config.yaml")
     interval, _ := strconv.Atoi(getEnv("REFRESH_INTERVAL", "600"))
 
     log.Println("Listening on http://", addr)
